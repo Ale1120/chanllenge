@@ -1,0 +1,23 @@
+{
+  "name": "chanllenge",
+  "version": "1.0.0",
+  "description": "web de prueba para CI/CD",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ale1120/chanllenge.git"
+  },
+  "author": "Aleo1120",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ale1120/chanllenge/issues"
+  },
+  "homepage": "https://github.com/Ale1120/chanllenge#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
