@@ -32,8 +32,8 @@ jobs:
         IMAGE_TAG: ${{ github.sha }}
         IMAGE_NAME: ${{ github.ref_name }}
       run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:Web:$IMAGE_NAME-$IMAGE_TAG .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:Web:$IMAGE_NAME-$IMAGE_TAG
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:Web-$IMAGE_NAME-$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:Web-$IMAGE_NAME-$IMAGE_TAG
     
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
