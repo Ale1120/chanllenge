@@ -35,12 +35,20 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:Web-$IMAGE_NAME-$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:Web-$IMAGE_NAME-$IMAGE_TAG
         echo "image=$ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        sed -i 's/Produccion/'"Testing"'/ ' Web-Devops-ECS.json
     
-    - name: ENVIRONMENT_NAME
-      run: |
-        sed -i 's/Produccion/'"${{ github.ref_name}}"'/ ' Web-Devops-ECS.json
-        aws ecs register-task-definition --region us-east-2 --cli-input-json Web-Devops-ECS.json
+    - name: Fill in the new image ID in the Amazon ECS task definition
+      id: task-def
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+          task-definition: Web-Devops-ECS.json 
+          container-name: Devpps
+          image: ${{ steps.build-image.outputs.image }}    
     
     - name: Deploy Amazon ECS task definition
-      run: |
-        aws ecs update-service --cluster devops --service Web-service --force-new-deployment
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: Web-Service
+          cluster: devops
+          wait-for-service-stability: true        
