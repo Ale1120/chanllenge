@@ -38,7 +38,7 @@ jobs:
     
     - name: ENVIRONMENT_NAME
       run: |
-        sed -i 's/Produccion/"${{ github.ref_name}}"'
+        sed -i 's/Produccion/"${{ github.ref_name}}/"'
         aws ecs register-task-definition --cli-input-json file:Web-Devops-ECS.json
     
     - name: Deploy Amazon ECS task definition
