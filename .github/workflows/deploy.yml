@@ -36,18 +36,11 @@ jobs:
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:Web-$IMAGE_NAME-$IMAGE_TAG
         echo "image=$ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
     
-    - name: Fill in the new image ID in the Amazon ECS task definition
-      id: task-def
-      uses: aws-actions/amazon-ecs-render-task-definition@v1
-      with:
-          task-definition: Web-Devops-ECS.json 
-          container-name: Devpps
-          image: ${{ steps.build-image.outputs.image }}    
+    - name: ENVIRONMENT_NAME
+      run: |
+        sed -i 's/Produccion/"${{ github.ref_name}}"'
+        aws ecs register-task-definition --cli-input-json file:Web-Devops-ECS.json
     
     - name: Deploy Amazon ECS task definition
-      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-      with:
-          task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: Web-Service
-          cluster: devops
-          wait-for-service-stability: true        
+      run: |
+        aws ecs update-service --cluster devops --service Web-service --force-new-deployment

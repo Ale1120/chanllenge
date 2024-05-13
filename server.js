@@ -5,7 +5,7 @@ const port = process.env.PORT || 8080;
 
 // Enviar el nombre del ambiente de trabajo como respuesta
 app.get('/', (req, res) => {
-  res.send(`Ambiente de trabajo: ${process.env.NOMBRE_AMBIENTE}`);
+  res.send(`Ambiente de trabajo: ${process.env.ENVIRONMENT_NAME}`);
 });
 
 app.listen(port, () => {
