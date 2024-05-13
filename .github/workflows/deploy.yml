@@ -35,9 +35,8 @@ jobs:
         sed -i 's/Produccion/'"${{ github.ref_name }}"'/ ' Dockerfile
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:Web-$IMAGE_NAME-$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:Web-$IMAGE_NAME-$IMAGE_TAG
-        echo "image=$ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        echo "image=$ECR_REGISTRY/$REPOSITORY:Web-$IMAGE_NAME-$IMAGE_TAG" >> $GITHUB_OUTPUT
         sed -i 's/Produccion/'"${{ github.ref_name }}"'/ ' Web-Devops-ECS.json
-        sed -i 's/Testing-ad1bde9bd044c5483518e9e866686e428620c4f1/'"${{ github.ref_name }}"'-'"${{ github.ref_name }}"'/ ' Web-Devops-ECS.json
     
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
