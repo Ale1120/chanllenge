@@ -18,7 +18,7 @@ COPY . .
 EXPOSE 8080
 
 # Definir variable de entorno
-ENV ENVIRONMENT_NAME=Desarrollo
+ENV ENVIRONMENT_NAME=Produccion
 
 # Comando para correr la aplicación
 CMD [ "node", "server.js" ]
