@@ -1,0 +1,5 @@
+node_module/
+.env
+.gitignore
+README.md
+Web-Devops-ECS.json
