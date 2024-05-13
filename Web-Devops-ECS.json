@@ -18,7 +18,7 @@
             "environment": [
                 {
                     "name": "ENVIRONMENT_NAME",
-                    "value": ""
+                    "value": "Produccion"
                 }
             ],
             "environmentFiles": [],
