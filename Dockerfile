@@ -15,7 +15,7 @@ RUN npm install
 COPY . .
 
 # Tu aplicación se une al puerto 8080, así que usarás la instrucción EXPOSE para que el puerto 8080 esté disponible
-EXPOSE 8080
+EXPOSE 80
 
 # Definir variable de entorno
 ENV ENVIRONMENT_NAME=Produccion
