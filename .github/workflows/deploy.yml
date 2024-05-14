@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - Testing
+      - Develop
 
 jobs:
   build-and-push:
