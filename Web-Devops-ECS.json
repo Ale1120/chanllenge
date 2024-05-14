@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "Devpps",
-            "image": "704865839055.dkr.ecr.us-east-2.amazonaws.com/docker-devops:Testing-ad1bde9bd044c5483518e9e866686e428620c4f1",
+            "image": "704865839055.dkr.ecr.us-east-2.amazonaws.com/docker-devops",
             "cpu": 0,
             "portMappings": [
                 {
