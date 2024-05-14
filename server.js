@@ -1,7 +1,7 @@
 // server.js
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 80;
 
 // Enviar el nombre del ambiente de trabajo como respuesta
 app.get('/', (req, res) => {
