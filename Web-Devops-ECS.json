@@ -15,12 +15,7 @@
                 }
             ],
             "essential": true,
-            "environment": [
-                {
-                    "name": "ENVIRONMENT_NAME",
-                    "value": "Produccion"
-                }
-            ],
+            "environment": [],
             "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
