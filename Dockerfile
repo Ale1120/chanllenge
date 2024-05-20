@@ -11,8 +11,8 @@ RUN npm install
 # Copiar los archivos de la aplicación
 COPY . .
 
-# Tu aplicación se une al puerto 80, así que usarás la instrucción EXPOSE para que el puerto 80 esté disponible
-EXPOSE 80
+# Tu aplicación se une al puerto 80, así que usarás la instrucción EXPOSE para que el puerto 80 80 esté disponible
+EXPOSE 8080
 
 # Definir variable de entorno
 ENV ENVIRONMENT_NAME=Produccion
