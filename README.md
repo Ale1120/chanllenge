@@ -26,8 +26,9 @@ Para el apartado de CI/CD utilizamos un pipeline de git acction llamado **deploy
 Ingresamos a IAM y creamos un usario con permisos sobre los proudctos ECS y ECR,
 
 
-`AWS_ACCESS_KEY_ID: <AWS_ACCESS_KEY_ID>`
-`AWS_SECRET_ACCESS_KEY: <AWS_SECRET_ACCESS_KEY>`
+`AWS_ACCESS_KEY_ID: <AWS_ACCESS_KEY_ID>
+
+ AWS_SECRET_ACCESS_KEY: <AWS_SECRET_ACCESS_KEY>`
 
 ### Variables de entornos.
 
@@ -44,3 +45,5 @@ Esta son las variables que tenemos que modificar para realizar un despligue a **
   CONTAINER_NAME: MY_CONTAINER_NAME           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 `
+
+Luego para ingresar a ver el portal web ir a el apartado de configuracion de la nueva tarea creada y copiar la ip publica en su navegador

@@ -14,7 +14,7 @@ env:
   CONTAINER_NAME: Devpps         
 
 jobs:
-  build-and-push:
+  Deploy-AWS:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
