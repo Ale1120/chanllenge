@@ -3,26 +3,31 @@ Ejecutamos el servicio,
 
 ### Docker
 Clonar el repositorio.
+
 `$ git clone https://github.com/Ale1120/chanllenge.git`
 
 Nos dirigimos a la caperta del repositorio.
+
 `$ cd chanllenge`
 
 Recreamos la imagen docker.
+
 `$ docker build -t web-app-nodejs .`
 
 ejecutamos el contenedor docker con la siguiente instruccion.
+
 `$ docker run -it --name web-app-container -e ENVIRONMENT_NAME=<Your_Branch> -p 8080 web-app-node,js`
 
 ### Git Acction.
 Para el apartado de CI/CD utilizamos un pipeline de git acction llamado **deploy.yml
 ** ubicado en la carpeta **/.github/workflows/** del repositorio.
+
 ##### Creacion de credenciales.
 Ingresamos a IAM y creamos un usario con permisos sobre los proudctos ECS y ECR,
 
 
-`AWS_ACCESS_KEY_ID: <AWS_ACCESS_KEY_ID>
- AWS_SECRET_ACCESS_KEY: <AWS_SECRET_ACCESS_KEY>`
+`AWS_ACCESS_KEY_ID: <AWS_ACCESS_KEY_ID>`
+`AWS_SECRET_ACCESS_KEY: <AWS_SECRET_ACCESS_KEY>`
 
 ### Variables de entornos.
 
