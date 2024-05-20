@@ -1,5 +1,11 @@
+# Pagina Web que nos indica en que rama fue hecho su despligue.
+
+Este es un repositorio de una pagina web sencilla donde fue relaizado a traves de node.js version 14,
+con la finaliad de ralizar una pagina web que mediado una varible de entorno nos indique en que rama estamos,
+para luego a la hora de realizar su despligue nos mande un saludo y nos indique en que entorno nos encontramos
+
 Ejecutamos el servicio,
-```$ npm start``
+```$ npm start```
 
 Luego nos dirigimo a nuestro navegador.
 
