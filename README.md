@@ -27,11 +27,10 @@ Luego nos dirigimo a nuestro navegador.
 ```http://localhost:8080/```
 
 ### Git Acction.
-Para el apartado de CI/CD utilizamos un pipeline de git acction llamado **deploy.yml
-** ubicado en la carpeta **/.github/workflows/** del repositorio.
+Para el apartado de CI/CD utilizamos un pipeline de git acction llamado **deploy.yml** ubicado en la carpeta **/.github/workflows/** del repositorio.
 
 ##### Creacion de credenciales.
-Ingresamos a IAM y creamos un usario con permisos sobre los proudctos ECS y ECR,
+Ingresamos a IAM y creamos un usario con permisos sobre los proudctos ECS y ECR, luego nos dirigimos a git actions y creamos un secreto con **ID** y el **key** del usuaruio previamente creado.
 
 ```
 AWS_ACCESS_KEY_ID: <AWS_ACCESS_KEY_ID>
