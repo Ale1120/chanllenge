@@ -1,5 +1,9 @@
 Ejecutamos el servicio,
-```$ npm start```
+```$ npm start``
+
+Luego nos dirigimo a nuestro navegador.
+
+```http://localhost:8080/```
 
 ### Docker
 Clonar el repositorio.
@@ -17,6 +21,10 @@ Recreamos la imagen docker.
 ejecutamos el contenedor docker con la siguiente instruccion.
 
 ```$ docker run -it --name web-app-container -e ENVIRONMENT_NAME=<Your_Branch> -p 8080 web-app-node,js```
+
+Luego nos dirigimo a nuestro navegador.
+
+```http://localhost:8080/```
 
 ### Git Acction.
 Para el apartado de CI/CD utilizamos un pipeline de git acction llamado **deploy.yml
