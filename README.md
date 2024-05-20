@@ -33,9 +33,8 @@ Para el apartado de CI/CD utilizamos un pipeline de git acction llamado **deploy
 ##### Creacion de credenciales.
 Ingresamos a IAM y creamos un usario con permisos sobre los proudctos ECS y ECR,
 
-
-
-```AWS_ACCESS_KEY_ID: <AWS_ACCESS_KEY_ID>
+```
+AWS_ACCESS_KEY_ID: <AWS_ACCESS_KEY_ID>
 AWS_SECRET_ACCESS_KEY: <AWS_SECRET_ACCESS_KEY>
 ```
 
